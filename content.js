@@ -2,7 +2,7 @@ var title;
 var url1;
 var str_data;
 
-window.onload = function() {
+
 
     title = document.title;
     console.log(`Titulo da pagina'${document.title}'`);    
@@ -32,14 +32,41 @@ window.onload = function() {
     document.getElementById("URL").value;
     document.getElementById("data").value;
     document.getElementById("fonte").value;*/
+    /*
     let informacao = {
+    
         url: url1,
         date:str_data,
-        titulo: title
+        titulo: title    
     };
-   
+   */
+  let informacao = {
+   noticia:[
+       {
+           url:url1,
+           data:str_data,
+           titulo:title
+       }
+        ] 
+    
+};
+    $.ajax({
+		url     : 'http://localhost/clipping/savejson.php',
+		dataType : 'json',
+		method  : 'post',
+		//data    : { 'paragrafo': $('#word').val() },
+	data    : { data: JSON.stringify(informacao) },
+	//data    : {nome:"paragrafo", data: JSON.stringify(paragrafo) },
+	//data: "{'Paragrafo':' "+ paragraph + "'}",
+	//data:JSON.stringify({para1: paragrafo}),
+	//data    : { 'paragrafo': $('#paragraph').val() },	
+	success: function () {console.log("Thanks!"); },
+	failure: function() {console.log("Error!");}
+	});
+
+
    chrome.runtime.sendMessage(informacao);
-} 
+ 
 
 function salvaDados() {
     var title = document.getElementById('titulo').value;

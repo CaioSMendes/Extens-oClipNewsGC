@@ -3,8 +3,10 @@
 <head>
 	<title></title>
 	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='">
 	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
 	<script src = "save.js" type="text/javascript"></script>
+	<script src = "jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -65,7 +67,7 @@
 			</div>
 			<br>
 			<div>
-				<input type="submit" onclick="salvaDados()" value="Salvar">
+				<input type="submit" onclick="salvaNoticia()" value="Salvar">
 			</div>
 		</form>
 	</div>  	

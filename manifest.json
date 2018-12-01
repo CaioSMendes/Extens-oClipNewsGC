@@ -7,7 +7,7 @@
 		"matches": [
 			"<all_urls>"
 		],	
-		"js": ["content.js"]
+		"js": ["jquery.min.js","content.js"]
 		}
 	],
 	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
@@ -15,7 +15,7 @@
 	{
 		"scripts": ["background.js"]
 	},
-	"permissions": ["tabs"],
+	"permissions": ["tabs","storage"],
 	"browser_action": {
 	"default_icon": "ClipNews-icon.png",
 	"default_popup": "popup.html",
